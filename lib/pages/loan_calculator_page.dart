@@ -49,17 +49,14 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
           children: [
             Card(
               elevation: 4,
-              color: Colors.white, // Fondo blanco para las tarjetas
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
                     Text(
                       'Monto del préstamo',
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orange),
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Slider(
                       value: loanAmount,
@@ -72,11 +69,10 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                           loanAmount = value;
                         });
                       },
-                      activeColor: Colors.orange, // Color del slider
                     ),
                     Text(
                       'S/. ${loanAmount.toStringAsFixed(2)}',
-                      style: TextStyle(fontSize: 16, color: Colors.orange),
+                      style: TextStyle(fontSize: 16),
                     ),
                   ],
                 ),
@@ -85,17 +81,14 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
             SizedBox(height: 20),
             Card(
               elevation: 4,
-              color: Colors.white, // Fondo blanco para las tarjetas
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
                     Text(
                       'Plazo del préstamo',
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orange),
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Slider(
                       value: loanTerm.toDouble(),
@@ -108,11 +101,10 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                           loanTerm = value.toInt();
                         });
                       },
-                      activeColor: Colors.orange, // Color del slider
                     ),
                     Text(
                       '$loanTerm meses',
-                      style: TextStyle(fontSize: 16, color: Colors.orange),
+                      style: TextStyle(fontSize: 16),
                     ),
                   ],
                 ),
@@ -121,17 +113,14 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
             SizedBox(height: 20),
             Card(
               elevation: 4,
-              color: Colors.white, // Fondo blanco para las tarjetas
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
                     Text(
                       'Tasa de interés anual',
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orange),
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Slider(
                       value: annualInterestRate,
@@ -144,11 +133,10 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
                           annualInterestRate = value;
                         });
                       },
-                      activeColor: Colors.orange, // Color del slider
                     ),
                     Text(
                       '${annualInterestRate.toStringAsFixed(2)} %',
-                      style: TextStyle(fontSize: 16, color: Colors.orange),
+                      style: TextStyle(fontSize: 16),
                     ),
                   ],
                 ),
@@ -159,7 +147,6 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
               onPressed: _calculateLoan,
               child: Text('Calcular'),
               style: ElevatedButton.styleFrom(
-                primary: Colors.orange, // Color del botón
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                 textStyle: TextStyle(fontSize: 18),
               ),
