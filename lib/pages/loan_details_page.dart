@@ -21,7 +21,7 @@ class LoanDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detalles del Préstamo'),
+        title: const Text('Detalles del Préstamo'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -33,50 +33,61 @@ class LoanDetailsPage extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       'Detalles del préstamo',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Text(
                       'Monto del préstamo: S/. ${loanAmount.toStringAsFixed(2)}',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                     Text(
                       'Periodo en meses: $loanTerm',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                     Text(
                       'Interés mensual: ${monthlyInterestRate.toStringAsFixed(2)} %',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                     Text(
                       'Cuota mensual: S/. ${monthlyPayment.toStringAsFixed(2)}',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                     Text(
                       'Total de interés a pagar: S/. ${totalInterest.toStringAsFixed(2)}',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                     Text(
                       'Total a pagar: S/. ${totalPayment.toStringAsFixed(2)}',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                   ],
                 ),
               ),
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
+            const SizedBox(height: 20),
+            const Text(
+              '🎉 Felicidades 🎉\nSu préstamo fue aprobado',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.green,
+              ),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton.icon(
               onPressed: () {
-                // Regresa a la página anterior
                 Navigator.pop(context);
               },
-              child: Text('Volver'),
+              icon: const Icon(Icons.home, size: 24),
+              label: const Text('VOLVER'),
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-                textStyle: TextStyle(fontSize: 18),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                textStyle: const TextStyle(fontSize: 18),
               ),
             ),
           ],
